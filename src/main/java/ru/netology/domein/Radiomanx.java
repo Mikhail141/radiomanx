@@ -22,7 +22,7 @@ public class Radiomanx {
     }
 
     public void increaseCurrentNumberstation() {
-        if (currentNumberstation == 9) {
+        if (currentNumberstation == 10) {
 
             this.currentNumberstation = 0;
             return;
@@ -32,16 +32,16 @@ public class Radiomanx {
 
     public void decreaseCurrentNumberstation() {
         if (currentNumberstation <= 0) {
-            this.currentNumberstation = 9;
+            this.currentNumberstation = 10;
             return;
         }
         this.currentNumberstation--;
     }
 
     public void increaseCurrentSound() {
-        if (currentSound >= 10) {
+        if (currentSound >= 100) {
 
-            this.currentSound = 10;
+            this.currentSound = 100;
             return;
         }
         this.currentSound++;

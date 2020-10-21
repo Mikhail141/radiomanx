@@ -10,7 +10,7 @@ public class RadiomanxTest {
     @Test
     void getNumberstation() {
         Radiomanx radioman = new Radiomanx();
-        int maxstation = 9;
+        int maxstation = 10;
         int minstation = 0;
 
         radioman.setCurrentNumberstation(3);
@@ -20,17 +20,17 @@ public class RadiomanxTest {
 
     @Test
     void getSound() {
-        int maxsound = 10;
+        int maxsound = 100;
         int minsound = 0;
 
-        radiomanx.setCurrentSound(10);
-        assertEquals(10,radiomanx.getCurrentSound());
+        radiomanx.setCurrentSound(100);
+        assertEquals(100,radiomanx.getCurrentSound());
     }
 
 
     @Test
     void increaseCurrentNumberstationMax() {
-        radiomanx.setCurrentNumberstation(9);
+        radiomanx.setCurrentNumberstation(10);
         radiomanx.increaseCurrentNumberstation();
         assertEquals(0, radiomanx.getCurrentNumberstation());
 
@@ -47,7 +47,7 @@ public class RadiomanxTest {
     void decreaseCurrentNumberstationMin() {
         radiomanx.setCurrentNumberstation(0);
         radiomanx.decreaseCurrentNumberstation();
-        assertEquals(9,radiomanx.getCurrentNumberstation());
+        assertEquals(10,radiomanx.getCurrentNumberstation());
     }
 
     @Test
@@ -59,9 +59,9 @@ public class RadiomanxTest {
 
     @Test
     void increaseCurrentSoundMax() {
-        radiomanx.setCurrentSound(10);
+        radiomanx.setCurrentSound(100);
         radiomanx.increaseCurrentSound();
-        assertEquals(10,radiomanx.getCurrentSound());
+        assertEquals(100,radiomanx.getCurrentSound());
     }
 
     @Test
