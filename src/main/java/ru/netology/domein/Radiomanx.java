@@ -2,30 +2,22 @@ package ru.netology.domein;
 
 public class Radiomanx {
 
-
     private int currentNumberstation;
-    private int currentSound = 50;
-
-
-
+    private int currentSound;
 
     public int getCurrentNumberstation() {
-
         return currentNumberstation;
     }
 
     public void setCurrentNumberstation(int currentNumberstation) {
-
         this.currentNumberstation = currentNumberstation;
     }
 
     public int getCurrentSound() {
-
         return currentSound;
     }
 
     public void setCurrentSound(int currentSound) {
-
         this.currentSound = currentSound;
     }
 
@@ -49,19 +41,21 @@ public class Radiomanx {
     public void increaseCurrentSound() {
         if (currentSound >= 100) {
 
-
             this.currentSound = 100;
-
             return;
         }
         this.currentSound++;
     }
 
     public void decreaseCurrentSound() {
-        if (currentSound <= 0) {
+        if (currentSound == 0) {
+
+            this.currentSound = 0;
             return;
         }
         this.currentSound --;
 
     }
 }
+
+
