@@ -48,6 +48,10 @@ public class Radiomanx {
 
     public void increaseCurrentSound() {
         if (currentSound >= 100) {
+
+
+            this.currentSound = 100;
+
             return;
         }
         this.currentSound++;
