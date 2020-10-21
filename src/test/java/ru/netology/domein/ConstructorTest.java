@@ -62,12 +62,14 @@ class ConstructorTest {
 
 
     @Test
-    void increaseCurrentNumberstation() {
-
+    void increaseCurrentNumberstationMax() {
         constructor.setCurrentNumberstation(10);
         constructor.increaseCurrentNumberstation();
         assertEquals(0, constructor.getCurrentNumberstation());
+    }
 
+    @Test
+    void increaseCurrentNumberstation() {
         constructor.setCurrentNumberstation(0);
         constructor.increaseCurrentNumberstation();
         assertEquals(1, constructor.getCurrentNumberstation());
@@ -75,36 +77,47 @@ class ConstructorTest {
     }
 
     @Test
-    void decreaseCurrentNumberstation() {
+    void decreaseCurrentNumberstationMin() {
 
         constructor.setCurrentNumberstation(0);
         constructor.decreaseCurrentNumberstation();
         assertEquals(10, constructor.getCurrentNumberstation());
-
-        constructor.setCurrentNumberstation(8);
-        constructor.decreaseCurrentNumberstation();
-        assertEquals(7, constructor.getCurrentNumberstation());
     }
 
     @Test
-    void increaseCurrentSound() {
+    void decreaseCurrentNumberstation(){
+        constructor.setCurrentNumberstation(8);
+        constructor.decreaseCurrentNumberstation();
+        assertEquals(7, constructor.getCurrentNumberstation());
+
+    }
+
+    @Test
+    void increaseCurrentSoundMax() {
 
         constructor.setCurrentSound(100);
         constructor.increaseCurrentSound();
         assertEquals(100, constructor.getCurrentSound());
-
+    }
+    @Test
+    void increaseCurrentSound(){
         constructor.setCurrentSound(7);
         constructor.increaseCurrentSound();
         assertEquals(8, constructor.getCurrentSound());
+
     }
 
+
     @Test
-    void decreaseCurrentSound() {
+    void decreaseCurrentSoundMin() {
 
         constructor.setCurrentSound(0);
         constructor.decreaseCurrentSound();
         assertEquals(0, constructor.getCurrentSound());
+    }
 
+    @Test
+    void decreaseCurrentSound(){
         constructor.setCurrentSound(8);
         constructor.decreaseCurrentSound();
         assertEquals(7, constructor.getCurrentSound());
