@@ -9,14 +9,14 @@ import lombok.NoArgsConstructor;
 @Data
 
 public class Radiomanx {
-    private int maxstation = 10;
-    private int maxsound = 100;
+    private int maxstation;
+    private int maxsound;
     private int currentNumberstation;
     private int currentSound;
 
 
     public void increaseCurrentNumberstation() {
-        if (currentNumberstation == 10) {
+        if (currentNumberstation == maxstation) {
 
             this.currentNumberstation = 0;
             return;
@@ -26,16 +26,16 @@ public class Radiomanx {
 
     public void decreaseCurrentNumberstation() {
         if (currentNumberstation <= 0) {
-            this.currentNumberstation = 10;
+            this.currentNumberstation = maxstation;
             return;
         }
         this.currentNumberstation--;
     }
 
     public void increaseCurrentSound() {
-        if (currentSound >= 100) {
+        if (currentSound >= maxsound) {
 
-            this.currentSound = 100;
+            this.currentSound = maxsound;
             return;
         }
         this.currentSound++;
