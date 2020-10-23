@@ -1,33 +1,19 @@
 package ru.netology.domein;
 
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
+@AllArgsConstructor
+@NoArgsConstructor
+@Data
+
 public class Radiomanx {
-
-
+    private int maxstation = 10;
+    private int maxsound = 100;
     private int currentNumberstation;
-    private int currentSound = 50;
+    private int currentSound;
 
-
-
-
-    public int getCurrentNumberstation() {
-
-        return currentNumberstation;
-    }
-
-    public void setCurrentNumberstation(int currentNumberstation) {
-
-        this.currentNumberstation = currentNumberstation;
-    }
-
-    public int getCurrentSound() {
-
-        return currentSound;
-    }
-
-    public void setCurrentSound(int currentSound) {
-
-        this.currentSound = currentSound;
-    }
 
     public void increaseCurrentNumberstation() {
         if (currentNumberstation == 10) {
@@ -48,16 +34,23 @@ public class Radiomanx {
 
     public void increaseCurrentSound() {
         if (currentSound >= 100) {
+
+            this.currentSound = 100;
             return;
         }
         this.currentSound++;
     }
 
     public void decreaseCurrentSound() {
-        if (currentSound <= 0) {
+        if (currentSound == 0) {
+
+            this.currentSound = 0;
             return;
         }
         this.currentSound --;
 
-    }
 }
+}
+
+
+

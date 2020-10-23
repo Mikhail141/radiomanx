@@ -5,13 +5,10 @@ import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 
 class RadiomanxTest {
-    Radiomanx radiomanx = new Radiomanx();
+    Radiomanx radiomanx = new Radiomanx(10,100,0,0);
 
     @Test
     void getNumberstation() {
-        Radiomanx radioman = new Radiomanx();
-        int maxstation = 10;
-        int minstation = 0;
         radiomanx.setCurrentNumberstation(5);
         assertEquals(5,radiomanx.getCurrentNumberstation());
 
@@ -19,8 +16,6 @@ class RadiomanxTest {
 
     @Test
     void getSound() {
-        int maxsound = 100;
-        int minsound = 0;
         radiomanx.setCurrentSound(100);
         assertEquals(100,radiomanx.getCurrentSound());
     }
@@ -92,6 +87,19 @@ class RadiomanxTest {
         radiomanx.decreaseCurrentSound();
         assertEquals(7,radiomanx.getCurrentSound());
     }
+
+    @Test
+    void getMaxstation() {
+        radiomanx.setMaxstation(10);
+        assertEquals(10,radiomanx.getMaxstation());
+    }
+
+    @Test
+    void getMaxsound() {
+        radiomanx.setMaxsound(100);
+        assertEquals(100,radiomanx.getMaxsound());
+    }
+
 
 }
 
